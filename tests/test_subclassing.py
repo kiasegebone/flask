@@ -13,6 +13,8 @@ def test_suppressed_exception_logging():
 
     @app.route("/")
     def index():
+        # OpenRefactory Warning: Raising 'Exception' and 'BaseException' directly will have a negative impact on any code trying to catch these exceptions.
+        # Raise a more specific built-in exception or, create a custom one.
         raise Exception("test")
 
     rv = app.test_client().get("/", errors_stream=out)
