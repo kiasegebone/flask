@@ -2066,6 +2066,8 @@ class Flask(Scaffold):
             except Exception as e:
                 error = e
                 response = self.handle_exception(e)
+            # OpenRefactory Warning: Too broad exception clause.
+            # Instead of using an empty except block use a more specific built-in exception or, create a custom one.
             except:  # noqa: B001
                 error = sys.exc_info()[1]
                 raise
